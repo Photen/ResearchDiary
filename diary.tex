@@ -1,0 +1,197 @@
+% =============================================================================
+% Research Diary - Simplified Version
+% =============================================================================
+% 
+% This document demonstrates how to use the researchdiary.sty package
+% to create a professional research diary/journal.
+%
+% Features:
+% - Clean, organized structure
+% - Professional black-based design
+% - Bibliography support
+% - Custom environments for different content types
+%
+% Author: PhotonZhang
+% Email: zyw23@mails.tsinghua.edu
+% Collaborator: Claude Sonnet 4 (AI Assistant)
+% Version: 1.0
+% Release Date: July 29, 2025 (Beijing Time)
+% Date: 2025
+% =============================================================================
+
+\documentclass[12pt,a4paper,twoside]{article}
+
+% Load the research diary style package
+\usepackage{researchdiary}
+
+% Add bibliography file
+\addbibliographyfile{ref.bib}
+
+% =============================================================================
+% DOCUMENT BEGINS
+% =============================================================================
+
+\begin{document}
+
+% Create title page with author name
+\maketitlepage{PhotonZhang}
+
+% Add table of contents
+\newpage
+\tableofcontents
+\newpage
+
+% =============================================================================
+% SAMPLE DIARY ENTRY
+% =============================================================================
+
+\section{29 July 2025}
+
+\subsection{Research Plan}
+Today's main tasks:
+\begin{itemize}[leftmargin=*]
+    \item Reading relevant literature on optimization methods
+    \item Conducting experimental validation of production systems
+    \item Summarizing research progress and planning next steps
+\end{itemize}
+
+\subsection{Content Details}
+
+% Paper reading section
+\begin{paper}
+\textbf{Paper Title:} Optimization Methods for Production Systems \cite{he2016deep}
+
+\textbf{Authors:} Smith, J. et al.
+
+\textbf{Main Content:}
+\begin{itemize}
+    \item Proposed a new optimization algorithm for production scheduling
+    \item Achieved significant improvements in manufacturing efficiency
+    \item Algorithm has better convergence and computational efficiency
+    \item Introduced the concept of adaptive scheduling for dynamic environments
+\end{itemize}
+
+\textbf{Personal Thoughts:}
+The optimization approach in this paper shows promising results for industrial applications. The adaptive scheduling concept addresses dynamic production challenges effectively. This method might be applicable to my research on manufacturing systems.
+
+\textbf{Relevance Score:} \textcolor{successgreen}{*****} (5/5)
+
+\textbf{Related Papers:}
+\begin{itemize}
+    \item \cite{simonyan2014very} - Traditional scheduling methods comparison
+    \item \cite{krizhevsky2012imagenet} - Baseline optimization approaches
+\end{itemize}
+\end{paper}
+
+% Experiment log section
+\begin{experiment}
+\textbf{Experiment Name:} Production System Optimization
+
+\textbf{Objective:}
+Compare performance of different optimization algorithms for production scheduling
+
+\textbf{Experimental Setup:}
+\begin{itemize}
+    \item Dataset: Manufacturing production data (1000 orders, 50 machines)
+    \item Algorithms: Genetic Algorithm \cite{he2016deep}, Simulated Annealing \cite{simonyan2014very}
+    \item Iterations: 1000 iterations
+    \item Parameters: Adaptive mutation rate and cooling schedule
+    \item Objective: Minimize makespan and maximize resource utilization
+\end{itemize}
+
+\textbf{Results:}
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Algorithm} & \textbf{Makespan} & \textbf{Computational Time} \\
+\midrule
+Genetic Algorithm & 92.3\% efficiency & 2.5h \\
+Simulated Annealing & 89.7\% efficiency & 3.2h \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item Genetic Algorithm performs significantly better due to adaptive parameters
+    \item Computational time is reduced by 22\% with improved convergence
+    \item Better solution quality observed with genetic approach
+\end{itemize}
+
+\textbf{Issues and Thoughts:}
+Genetic Algorithm's superior performance validates the effectiveness of evolutionary optimization. Next step is to analyze the specific reasons and potentially apply hybrid methods \cite{vaswani2017attention} to further improve performance.
+\end{experiment}
+
+% Code snippet section
+\begin{codebox}
+\% Example code for genetic algorithm implementation
+def genetic\_algorithm(population, generations=100):
+    """
+    Genetic algorithm implementation for production scheduling
+    """
+    best\_solution = None
+    
+    \% Main evolution loop
+    for generation in range(generations):
+        \% Selection
+        parents = select\_parents(population)
+        
+        \% Crossover
+        offspring = crossover(parents)
+        
+        \% Mutation
+        offspring = mutate(offspring)
+        
+        \% Evaluation
+        fitness = evaluate(offspring)
+        
+        \% Update population
+        population = update\_population(population, offspring)
+        
+        \% Track best solution
+        if fitness > best\_fitness:
+            best\_solution = offspring
+            best\_fitness = fitness
+    
+    return best\_solution
+\end{codebox}
+
+% Important note section
+\begin{note}
+\textbf{Important Discovery:} The genetic algorithm approach shows promise for my research direction. Consider exploring:
+\begin{itemize}
+    \item Hybrid optimization methods combining multiple algorithms
+    \item Machine learning techniques \cite{goodfellow2014generative} for parameter tuning
+    \item Real-time scheduling applications
+\end{itemize}
+\end{note}
+
+% Daily summary section
+\begin{summary}
+\textbf{Today's Achievements:}
+\begin{itemize}
+    \item Gained deep understanding of genetic algorithm principles from \cite{he2016deep}
+    \item Completed baseline experiments, establishing performance benchmarks
+    \item Discovered promising research direction for hybrid optimization
+    \item Identified potential applications in manufacturing systems
+\end{itemize}
+
+\textbf{Tomorrow's Plan:}
+\begin{itemize}
+    \item Analyze specific reasons for Genetic Algorithm's performance advantages
+    \item Implement hybrid optimization methods
+    \item Prepare presentation materials for next week's group meeting
+    \item Review related literature on optimization methods \cite{lecun2015deep}
+\end{itemize}
+
+\textbf{Issues Encountered:}
+Some problems with experimental environment configuration, need to contact IT department for resolution. Computational resource limitations require optimization of algorithm parameters.
+
+\textbf{Inspiration Notes:}
+Consider integrating machine learning techniques \cite{vaswani2017attention} into optimization algorithms, might yield unexpected results. The combination of evolutionary algorithms and machine learning could be a novel contribution to the field.
+\end{summary}
+
+% Print bibliography section
+\printbibliographysection
+
+\end{document} 

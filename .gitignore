@@ -1,0 +1,47 @@
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex
+*.nav
+*.snm
+*.vrb
+
+# PDF files (optional - uncomment if you don't want to track PDFs)
+# *.pdf
+
+# Keep documentation images
+!docs/images/*.png
+!docs/images/*.jpg
+!docs/images/*.jpeg
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+*#
+
+# Backup files
+*.bak
+*.backup
+
+# Temporary files
+*.tmp
+*.temp 

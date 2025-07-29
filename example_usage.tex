@@ -1,0 +1,285 @@
+% =============================================================================
+% Research Diary Usage Example
+% =============================================================================
+% 
+% This document demonstrates how to use the research diary system
+% with detailed examples for each environment and feature.
+%
+% Author: PhotonZhang
+% Email: zyw23@mails.tsinghua.edu
+% Collaborator: Claude Sonnet 4 (AI Assistant)
+% Version: 1.0
+% Release Date: July 29, 2025 (Beijing Time)
+% Date: 2025
+% =============================================================================
+
+\documentclass[12pt,a4paper,twoside]{article}
+
+% Load the research diary style package
+\usepackage{researchdiary}
+
+% Add bibliography file
+\addbibliographyfile{ref.bib}
+
+% =============================================================================
+% DOCUMENT BEGINS
+% =============================================================================
+
+\begin{document}
+
+% Create title page
+\maketitlepage{PhotonZhang}
+
+% Add table of contents
+\newpage
+\tableofcontents
+\newpage
+
+% =============================================================================
+% EXAMPLE 1: LITERATURE REVIEW ENTRY
+% =============================================================================
+
+\section{30 July 2025 - Literature Review}
+
+\subsection{Research Focus}
+Today's focus is on reviewing recent papers in production optimization and scheduling algorithms.
+
+% Paper reading example
+\begin{paper}
+\textbf{Paper Title:} Advanced Genetic Algorithms for Job Shop Scheduling \cite{he2016deep}
+
+\textbf{Authors:} Johnson, M. and Smith, A.
+
+\textbf{Main Content:}
+\begin{itemize}
+    \item Introduced adaptive mutation rates for genetic algorithms
+    \item Applied to job shop scheduling problems with 100+ jobs
+    \item Achieved 15\% improvement over traditional methods
+    \item Proposed hybrid approach combining GA with local search
+\end{itemize}
+
+\textbf{Personal Thoughts:}
+This paper provides excellent insights into adaptive parameter tuning. The hybrid approach is particularly interesting and could be applied to our manufacturing scheduling problems. The 15\% improvement is significant for industrial applications.
+
+\textbf{Relevance Score:} \textcolor{successgreen}{*****} (5/5)
+
+\textbf{Related Papers:}
+\begin{itemize}
+    \item \cite{simonyan2014very} - Traditional scheduling methods
+    \item \cite{krizhevsky2012imagenet} - Benchmark comparison
+\end{itemize}
+\end{paper}
+
+% =============================================================================
+% EXAMPLE 2: EXPERIMENTAL WORK
+% =============================================================================
+
+\section{31 July 2025 - Experimental Work}
+
+\subsection{Algorithm Implementation}
+Testing the genetic algorithm implementation on our production dataset.
+
+% Experiment log example
+\begin{experiment}
+\textbf{Experiment Name:} Genetic Algorithm Performance Testing
+
+\textbf{Objective:}
+Evaluate the performance of our genetic algorithm implementation on real manufacturing data
+
+\textbf{Experimental Setup:}
+\begin{itemize}
+    \item Dataset: Real production data from Factory A (500 orders, 30 machines)
+    \item Algorithm: Custom genetic algorithm with adaptive parameters
+    \item Parameters: Population size=100, generations=200, mutation rate=0.1
+    \item Comparison: Against traditional FCFS (First Come First Serve)
+    \item Metrics: Makespan, resource utilization, computational time
+\end{itemize}
+
+\textbf{Results:}
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Method} & \textbf{Makespan (hours)} & \textbf{Utilization (\%)} & \textbf{Time (min)} \\
+\midrule
+FCFS & 120.5 & 65.2 & 0.1 \\
+Genetic Algorithm & 98.3 & 78.9 & 45.2 \\
+Improvement & 18.4\% & 21.0\% & - \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item Genetic algorithm reduces makespan by 18.4\%
+    \item Resource utilization improved by 21.0\%
+    \item Computational time is acceptable for offline planning
+    \item Algorithm converges within 150 generations
+\end{itemize}
+
+\textbf{Issues and Thoughts:}
+The results are promising but computational time might be too high for real-time applications. Consider implementing parallel processing or hybrid approaches for faster execution.
+\end{experiment}
+
+% =============================================================================
+% EXAMPLE 3: CODE IMPLEMENTATION
+% =============================================================================
+
+\section{1 August 2025 - Code Development}
+
+\subsection{Algorithm Optimization}
+Working on improving the genetic algorithm implementation.
+
+% Code snippet example
+\begin{codebox}
+\% Improved genetic algorithm with adaptive parameters
+def adaptive\_genetic\_algorithm(population, max\_generations=200):
+    """
+    Enhanced genetic algorithm with adaptive mutation and crossover rates
+    """
+    best\_fitness = 0
+    best\_solution = None
+    
+    \% Adaptive parameters
+    mutation\_rate = 0.1
+    crossover\_rate = 0.8
+    
+    for generation in range(max\_generations):
+        \% Selection using tournament selection
+        parents = tournament\_selection(population, tournament\_size=3)
+        
+        \% Adaptive crossover
+        offspring = adaptive\_crossover(parents, crossover\_rate)
+        
+        \% Adaptive mutation
+        offspring = adaptive\_mutation(offspring, mutation\_rate)
+        
+        \% Evaluate fitness
+        fitness\_scores = [evaluate\_fitness(ind) for ind in offspring]
+        
+        \% Update best solution
+        max\_fitness = max(fitness\_scores)
+        if max\_fitness > best\_fitness:
+            best\_fitness = max\_fitness
+            best\_solution = offspring[fitness\_scores.index(max\_fitness)]
+        
+        \% Adaptive parameter adjustment
+        if generation \% 20 == 0:
+            mutation\_rate = adjust\_mutation\_rate(mutation\_rate, generation)
+            crossover\_rate = adjust\_crossover\_rate(crossover\_rate, generation)
+        
+        \% Population replacement
+        population = replace\_population(population, offspring)
+    
+    return best\_solution, best\_fitness
+\end{codebox}
+
+% =============================================================================
+% EXAMPLE 4: IMPORTANT DISCOVERIES
+% =============================================================================
+
+\section{2 August 2025 - Key Insights}
+
+\subsection{Research Breakthrough}
+Made an important discovery about parameter adaptation.
+
+% Important note example
+\begin{note}
+\textbf{Important Discovery:} Adaptive parameter adjustment significantly improves algorithm performance!
+
+Key findings:
+\begin{itemize}
+    \item Dynamic mutation rate reduces premature convergence
+    \item Adaptive crossover rate improves solution diversity
+    \item Parameter adjustment every 20 generations is optimal
+    \item Performance improvement: 25\% better than fixed parameters
+\end{itemize}
+
+\textbf{Next Steps:}
+\begin{itemize}
+    \item Implement this approach in our main algorithm
+    \item Test on larger datasets
+    \item Prepare paper for conference submission
+    \item Consider patent application for the adaptive method
+\end{itemize}
+\end{note}
+
+% =============================================================================
+% EXAMPLE 5: DAILY SUMMARY
+% =============================================================================
+
+\section{3 August 2025 - Weekly Summary}
+
+\subsection{Progress Review}
+Comprehensive review of this week's research progress.
+
+% Daily summary example
+\begin{summary}
+\textbf{This Week's Achievements:}
+\begin{itemize}
+    \item Completed literature review of 15 papers on genetic algorithms
+    \item Implemented and tested adaptive genetic algorithm
+    \item Achieved 25\% performance improvement over baseline
+    \item Identified key parameters for industrial applications
+    \item Prepared draft for conference paper
+\end{itemize}
+
+\textbf{Next Week's Plan:}
+\begin{itemize}
+    \item Implement parallel processing for faster execution
+    \item Test algorithm on multiple factory datasets
+    \item Compare with other optimization methods (PSO, SA)
+    \item Write detailed methodology section
+    \item Prepare presentation for research group meeting
+\end{itemize}
+
+\textbf{Challenges Encountered:}
+\begin{itemize}
+    \item Computational time still too high for real-time use
+    \item Need more diverse test datasets
+    \item Parameter tuning requires more systematic approach
+\end{itemize}
+
+\textbf{Inspiration Notes:}
+The adaptive parameter approach could be a novel contribution to the field. Consider extending this to other optimization algorithms. The industrial application potential is very high - could lead to significant cost savings in manufacturing.
+\end{summary}
+
+% =============================================================================
+% EXAMPLE 6: FUTURE RESEARCH DIRECTIONS
+% =============================================================================
+
+\section{4 August 2025 - Research Planning}
+
+\subsection{Future Directions}
+Planning next phase of research.
+
+% Another paper reading example
+\begin{paper}
+\textbf{Paper Title:} Machine Learning in Production Optimization \cite{vaswani2017attention}
+
+\textbf{Authors:} Chen, L. and Wang, H.
+
+\textbf{Main Content:}
+\begin{itemize}
+    \item Applied reinforcement learning to production scheduling
+    \item Used neural networks for parameter prediction
+    \item Achieved 30\% improvement over traditional methods
+    \item Real-time adaptation to changing conditions
+\end{itemize}
+
+\textbf{Personal Thoughts:}
+This paper opens up exciting possibilities for our research. The combination of ML and optimization could be the next breakthrough. We should explore this direction while maintaining our focus on industrial applications.
+
+\textbf{Relevance Score:} \textcolor{successgreen}{*****} (5/5)
+
+\textbf{Research Ideas:}
+\begin{itemize}
+    \item Combine our adaptive GA with ML parameter prediction
+    \item Use ML for real-time parameter adjustment
+    \item Apply to dynamic production environments
+\end{itemize}
+\end{paper}
+
+% Print bibliography
+\printbibliographysection
+
+\end{document} 

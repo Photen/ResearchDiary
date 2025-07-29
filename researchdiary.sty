@@ -1,0 +1,312 @@
+% =============================================================================
+% Research Diary LaTeX Style File
+% =============================================================================
+% 
+% This file defines the complete formatting for a research diary/journal
+% designed for PhD students and researchers in Industrial Engineering.
+%
+% Features:
+% - Modern black-based color scheme
+% - Custom environments for different content types
+% - Bibliography support
+% - Professional typography
+% - FontAwesome icons
+%
+% Usage: \usepackage{researchdiary}
+%
+% Author: PhotonZhang
+% Email: zyw23@mails.tsinghua.edu
+% Collaborator: Claude Sonnet 4 (AI Assistant)
+% Version: 1.0
+% Release Date: July 29, 2025 (Beijing Time)
+% Date: 2025
+% =============================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{researchdiary}[2025/07/29 v1.0 Research Diary Style]
+
+% =============================================================================
+% REQUIRED PACKAGES
+% =============================================================================
+
+% Basic LaTeX packages
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage{geometry}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{datetime}
+\RequirePackage{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{fontawesome5}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{enumitem}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{float}
+\RequirePackage{caption}
+\RequirePackage{parskip}
+\RequirePackage{etoolbox}
+\RequirePackage{csquotes}
+\RequirePackage[backend=biber,style=numeric,sorting=none]{biblatex}
+
+% =============================================================================
+% PAGE SETTINGS
+% =============================================================================
+
+% Page geometry with professional margins
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm,
+    headheight=25pt
+}
+
+% =============================================================================
+% COLOR DEFINITIONS
+% =============================================================================
+
+% Black-based professional color palette
+\definecolor{primaryblack}{RGB}{0, 0, 0}           % Primary black
+\definecolor{secondarygray}{RGB}{64, 64, 64}       % Secondary gray
+\definecolor{accentdark}{RGB}{32, 32, 32}          % Accent dark
+\definecolor{successgreen}{RGB}{46, 204, 113}      % Success green
+\definecolor{warningyellow}{RGB}{241, 196, 15}     % Warning yellow
+\definecolor{dangerred}{RGB}{231, 76, 60}          % Danger red
+\definecolor{lightgray}{RGB}{248, 249, 250}        % Light gray background
+\definecolor{darkgray}{RGB}{52, 73, 94}            % Dark gray
+\definecolor{papercolor}{RGB}{0, 0, 0}             % Paper color (black)
+\definecolor{experimentcolor}{RGB}{64, 64, 64}     % Experiment color (dark gray)
+\definecolor{summarycolor}{RGB}{32, 32, 32}        % Summary color (dark gray)
+
+% =============================================================================
+% HYPERREF SETTINGS
+% =============================================================================
+
+% Configure hyperlinks with black theme
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblack,
+    filecolor=secondarygray,
+    urlcolor=accentdark,
+    citecolor=successgreen,
+    pdftitle={Research Diary},
+    pdfauthor={PhotonZhang},
+    pdfkeywords={research, diary, industrial engineering}
+}
+
+% =============================================================================
+% HEADER AND FOOTER
+% =============================================================================
+
+% Modern header and footer design
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\textcolor{primaryblack}{\thepage}}
+\fancyhead[LO,RE]{\textcolor{primaryblack}{\textbf{Research Diary}}}
+\fancyhead[C]{\textcolor{darkgray}{\leftmark}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{primaryblack}\leaders\hrule height \headrulewidth\hfill}}
+
+% =============================================================================
+% TITLE FORMATTING
+% =============================================================================
+
+% Section title format with black theme
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{primaryblack}}
+  {\textcolor{primaryblack}{\thesection}}
+  {1em}
+  {}
+  [\vspace{-0.5em}\textcolor{primaryblack}{\rule{\textwidth}{2pt}}]
+
+% Subsection title format
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{secondarygray}}
+  {\textcolor{secondarygray}{\thesubsection}}
+  {1em}
+  {}
+  [\vspace{-0.3em}\textcolor{secondarygray}{\rule{0.5\textwidth}{1pt}}]
+
+% =============================================================================
+% CUSTOM ENVIRONMENTS
+% =============================================================================
+
+% Paper reading environment
+\newtcolorbox{paper}[1][]{
+    colback=lightgray,
+    colframe=papercolor,
+    boxrule=2pt,
+    leftrule=8pt,
+    before skip=1em,
+    after skip=1em,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    fontupper=\small,
+    title={\faBook\,\textbf{Paper Reading}},
+    coltitle=white,
+    colbacktitle=papercolor,
+    arc=8pt,
+    #1
+}
+
+% Experiment log environment
+\newtcolorbox{experiment}[1][]{
+    colback=lightgray,
+    colframe=experimentcolor,
+    boxrule=2pt,
+    leftrule=8pt,
+    before skip=1em,
+    after skip=1em,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    fontupper=\small,
+    title={\faFlask\,\textbf{Experiment Log}},
+    coltitle=white,
+    colbacktitle=experimentcolor,
+    arc=8pt,
+    #1
+}
+
+% Daily summary environment
+\newtcolorbox{summary}[1][]{
+    colback=lightgray,
+    colframe=summarycolor,
+    boxrule=2pt,
+    leftrule=8pt,
+    before skip=1em,
+    after skip=1em,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    fontupper=\small,
+    title={\faLightbulb\,\textbf{Daily Summary}},
+    coltitle=white,
+    colbacktitle=summarycolor,
+    arc=8pt,
+    #1
+}
+
+% Code snippet environment
+\newtcolorbox{codebox}[1][]{
+    colback=darkgray,
+    colframe=primaryblack,
+    boxrule=1pt,
+    before skip=1em,
+    after skip=1em,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    fontupper=\small\ttfamily\color{white},
+    title={\faCode\,\textbf{Code Snippet}},
+    coltitle=white,
+    colbacktitle=primaryblack,
+    arc=8pt,
+    #1
+}
+
+% Important note environment
+\newtcolorbox{note}[1][]{
+    colback=warningyellow!10,
+    colframe=warningyellow,
+    boxrule=1pt,
+    before skip=1em,
+    after skip=1em,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    fontupper=\small,
+    title={\faExclamationTriangle\,\textbf{Important Note}},
+    coltitle=white,
+    colbacktitle=warningyellow,
+    arc=8pt,
+    #1
+}
+
+% =============================================================================
+% DATE FORMATTING
+% =============================================================================
+
+% Custom date format
+\newdateformat{mydate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+
+% =============================================================================
+% UTILITY COMMANDS
+% =============================================================================
+
+% Command to create title page
+\newcommand{\maketitlepage}[1]{%
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \begin{center}
+            \vspace*{1cm}
+            
+            % Decorative line
+            \textcolor{primaryblack}{\rule{0.8\textwidth}{3pt}}
+            
+            \vspace{1cm}
+            
+            {\Huge\bfseries\textcolor{primaryblack}{Research Diary}}
+            
+            \vspace{0.5cm}
+            
+            {\Large\textcolor{darkgray}{PhD Research Journal}}
+            
+            \vspace{1cm}
+            
+            % Decorative line
+            \textcolor{primaryblack}{\rule{0.6\textwidth}{1pt}}
+            
+            \vspace{2cm}
+            
+            {\large\textcolor{darkgray}{Author: \textbf{#1}}}
+            
+            \vspace{0.5cm}
+            
+            {\large\textcolor{darkgray}{Start Date: \mydate\today}}
+            
+            \vspace{2cm}
+            
+            {\large\textcolor{darkgray}{Field: \textbf{Industrial Engineering}}}
+            
+            \vspace{1cm}
+            
+            % Decorative elements
+            \textcolor{primaryblack}{\faGraduationCap}
+            
+            \vfill
+            
+            % Bottom decorative line
+            \textcolor{primaryblack}{\rule{0.8\textwidth}{2pt}}
+            
+        \end{center}
+    \end{titlepage}
+}
+
+% Command to add bibliography
+\newcommand{\addbibliographyfile}[1]{%
+    \addbibresource{#1}
+}
+
+% Command to print bibliography with custom title
+\newcommand{\printbibliographysection}{%
+    \newpage
+    \printbibliography[title=References]
+}
+
+% =============================================================================
+% END OF PACKAGE
+% =============================================================================
+
+\endinput 

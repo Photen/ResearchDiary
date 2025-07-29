@@ -1,5 +1,22 @@
 # Research Diary LaTeX Template - Changelog
 
+## [1.1] - 2025-07-29
+
+### Enhanced
+- **Cross-Page Support**: All custom environments now support breaking across pages
+  - Paper reading environment (`paper`)
+  - Experiment log environment (`experiment`)
+  - Daily summary environment (`summary`)
+  - Code snippet environment (`codebox`)
+  - Important note environment (`note`)
+- **Improved Usability**: Enhanced user experience for long content entries
+- **Technical Enhancement**: Added `breakable` option to all tcolorbox environments
+
+### Technical Details
+- Modified `researchdiary.sty` to include `breakable` option in all environment definitions
+- Ensures seamless content flow across page boundaries
+- Maintains visual consistency and professional appearance
+
 ## [1.0] - 2025-07-29
 
 ### Added

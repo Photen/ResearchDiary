@@ -2,7 +2,7 @@
 
 A professional LaTeX template for creating research diaries and journals, specifically designed for PhD students and researchers in Industrial Engineering.
 
-[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/PhotonZhang/research-diary-template)
+[![Version](https://img.shields.io/badge/version-1.1-blue.svg)](https://github.com/PhotonZhang/research-diary-template)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![LaTeX](https://img.shields.io/badge/LaTeX-Research%20Diary-orange.svg)](https://www.latex-project.org/)
 
@@ -37,10 +37,11 @@ A professional LaTeX template for creating research diaries and journals, specif
 ## 📋 Features
 
 - **Modern Design**: Clean, professional black-based color scheme
-- **Custom Environments**: Specialized boxes for different content types
+- **Custom Environments**: Specialized boxes for different content types with **cross-page support**
 - **Bibliography Support**: Full biblatex integration
 - **FontAwesome Icons**: Visual enhancement with professional icons
 - **Responsive Layout**: Optimized for both screen and print
+- **Cross-Page Compatibility**: All environments can break across pages seamlessly
 
 ## 📁 File Structure
 
@@ -84,6 +85,8 @@ pdflatex your_document.tex
 Copy `diary.tex` and modify it according to your needs.
 
 ## 🎨 Available Environments
+
+> **New in v1.1**: All environments now support cross-page functionality, allowing seamless content flow across page boundaries while maintaining professional appearance.
 
 ### Paper Reading Environment
 ```latex
@@ -344,6 +347,11 @@ For issues or questions:
 6. Contact: zyw23@mails.tsinghua.edu
 
 ## 📋 Version History
+
+### Version 1.1 (July 29, 2025)
+- **Cross-Page Support**: All custom environments now support breaking across pages
+- **Improved Usability**: Enhanced user experience for long content entries
+- **Technical Enhancement**: Added `breakable` option to all tcolorbox environments
 
 ### Version 1.0 (July 29, 2025)
 - **Initial Release**: Complete research diary template system

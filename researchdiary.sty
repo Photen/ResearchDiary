@@ -17,13 +17,13 @@
 % Author: PhotonZhang
 % Email: zyw23@mails.tsinghua.edu
 % Collaborator: Claude Sonnet 4 (AI Assistant)
-% Version: 1.0
+% Version: 1.1
 % Release Date: July 29, 2025 (Beijing Time)
 % Date: 2025
 % =============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{researchdiary}[2025/07/29 v1.0 Research Diary Style]
+\ProvidesPackage{researchdiary}[2025/07/29 v1.1 Research Diary Style]
 
 % =============================================================================
 % REQUIRED PACKAGES
@@ -38,7 +38,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{datetime}
 \RequirePackage{xcolor}
-\RequirePackage{tcolorbox}
+\RequirePackage[most]{tcolorbox}
 \RequirePackage{fontawesome5}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{graphicx}
@@ -138,6 +138,7 @@
 
 % Paper reading environment
 \newtcolorbox{paper}[1][]{
+    breakable,
     colback=lightgray,
     colframe=papercolor,
     boxrule=2pt,
@@ -158,6 +159,7 @@
 
 % Experiment log environment
 \newtcolorbox{experiment}[1][]{
+    breakable,
     colback=lightgray,
     colframe=experimentcolor,
     boxrule=2pt,
@@ -178,6 +180,7 @@
 
 % Daily summary environment
 \newtcolorbox{summary}[1][]{
+    breakable,
     colback=lightgray,
     colframe=summarycolor,
     boxrule=2pt,
@@ -198,6 +201,7 @@
 
 % Code snippet environment
 \newtcolorbox{codebox}[1][]{
+    breakable,
     colback=darkgray,
     colframe=primaryblack,
     boxrule=1pt,
@@ -217,6 +221,7 @@
 
 % Important note environment
 \newtcolorbox{note}[1][]{
+    breakable,
     colback=warningyellow!10,
     colframe=warningyellow,
     boxrule=1pt,

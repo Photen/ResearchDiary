@@ -13,24 +13,28 @@ A professional LaTeX template for creating research diaries and journals, specif
 ## 📸 Preview
 
 ### Title Page
-![image-20250729102334192](./assets/image-20250729102334192.png)
+![diary_Page1](./assets/diary_Page1.png)
 *Professional title page with black-based design theme*
 
 ### Sample Diary Entry
-![image-20250729101418861](./assets/image-20250729101418861.png)
+![diary_Page2](./assets/diary_Page2.png)
 
 *Example of a complete diary entry with all environments*
 
 ### Custom Environments
-![image-20250729101512957](./assets/image-20250729101512957.png)
+![diary_Page3](./assets/diary_Page3.png)
 
-![image-20250729101540645](./assets/image-20250729101540645.png)
+![diary_Page4](./assets/diary_Page4.png)
 
 *Different content environments: Paper Reading, Experiment Log, Code Snippet, Important Note, and Daily Summary*
 
 ### Bibliography
-![image-20250729101552797](./assets/image-20250729101552797.png)
+![diary_Page5](./assets/diary_Page5.png)
 *Automatically generated bibliography with proper formatting*
+
+### Complete Example
+![diary_Page6](./assets/diary_Page6.png)
+*Full example showing the complete research diary layout*
 
 ---
 

@@ -13,7 +13,7 @@ A professional LaTeX template for creating research diaries and journals, specif
 ## 📸 Preview
 
 ### Title Page
-![image-20250729101327740](./assets/image-20250729101327740.png)
+![image-20250729102334192](./assets/image-20250729102334192.png)
 *Professional title page with black-based design theme*
 
 ### Sample Diary Entry

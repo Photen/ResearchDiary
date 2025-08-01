@@ -63,7 +63,7 @@
 
 ### Collaborators
 - **Author**: PhotonZhang
-- **Email**: zyw23@mails.tsinghua.edu
+- **Email**: zyw23@mails.tsinghua.edu.cn
 - **AI Assistant**: Claude Sonnet 4 (Anthropic)
 
 ### License

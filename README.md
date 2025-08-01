@@ -348,7 +348,7 @@ For issues or questions:
 3. Ensure all required packages are installed
 4. Test with the provided example files
 5. Open an issue on GitHub for bugs or feature requests
-6. Contact: zyw23@mails.tsinghua.edu
+6. Contact: zyw23@mails.tsinghua.edu.cn
 
 ## 📋 Version History
 
@@ -374,7 +374,7 @@ For issues or questions:
 ---
 
 **Author**: PhotonZhang  
-**Email**: zyw23@mails.tsinghua.edu  
+**Email**: zyw23@mails.tsinghua.edu.cn  
 **Field**: Industrial Engineering  
 **Collaborator**: Claude Sonnet 4 (AI Assistant)  
 **Version**: 1.0  
